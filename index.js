@@ -1,51 +1,74 @@
 module.exports = function() {
-  return function({addVariant, theme, e}) {
-    const darkSelector = theme('darkSelector', '.mode-dark');
-    addVariant('dark', ({modifySelectors, separator}) => {
-      modifySelectors(({className}) => {
-        return `${darkSelector} .${e(`dark${separator}${className}`)}`;
+  return function({ addVariant, theme, e }) {
+    const darkSelector = theme("darkSelector", ".mode-dark");
+    const darkIdentifier = theme("darkIdentifier", "darkmode");
+    addVariant(darkIdentifier, ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }) => {
+        return `${darkSelector} .${e(
+          `${darkIdentifier}${separator}${className}`
+        )}`;
       });
     });
 
-    addVariant('dark-hover', ({modifySelectors, separator}) => {
-      modifySelectors(({className}) => {
-        return `${darkSelector} .${e(`dark-hover${separator}${className}`)}:hover`;
+    addVariant(`{darkIdentifier}hover`, ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }) => {
+        return `${darkSelector} .${e(
+          `${darkIdentifier}-hover${separator}${className}`
+        )}:hover`;
       });
     });
 
-    addVariant('dark-focus', ({modifySelectors, separator}) => {
-      modifySelectors(({className}) => {
-        return `${darkSelector} .${e(`dark-focus${separator}${className}`)}:focus`;
+    addVariant(`{darkIdentifier}focus`, ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }) => {
+        return `${darkSelector} .${e(
+          `${darkIdentifier}-focus${separator}${className}`
+        )}:focus`;
       });
     });
 
-    addVariant('dark-active', ({modifySelectors, separator}) => {
-      modifySelectors(({className}) => {
-        return `${darkSelector} .${e(`dark-active${separator}${className}`)}:active`;
+    addVariant(`{darkIdentifier}active`, ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }) => {
+        return `${darkSelector} .${e(
+          `${darkIdentifier}-active${separator}${className}`
+        )}:active`;
       });
     });
 
-    addVariant('dark-group-hover', ({modifySelectors, separator}) => {
-      modifySelectors(({className}) => {
-        return `${darkSelector} .group:hover .${e(`dark-group-hover${separator}${className}`)}`;
+    addVariant(
+      `{darkIdentifier}group-hover`,
+      ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `${darkSelector} .group:hover .${e(
+            `${darkIdentifier}-group-hover${separator}${className}`
+          )}`;
+        });
+      }
+    );
+
+    addVariant(
+      `{darkIdentifier}focus-within`,
+      ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `${darkSelector} .${e(
+            `${darkIdentifier}-focus-within${separator}${className}`
+          )}:focus-within`;
+        });
+      }
+    );
+
+    addVariant(`{darkIdentifier}even`, ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }) => {
+        return `${darkSelector} .${e(
+          `${darkIdentifier}-even${separator}${className}`
+        )}:nth-child(even)`;
       });
     });
 
-    addVariant('dark-focus-within', ({modifySelectors, separator}) => {
-      modifySelectors(({className}) => {
-        return `${darkSelector} .${e(`dark-focus-within${separator}${className}`)}:focus-within`;
-      });
-    });
-
-    addVariant('dark-even', ({modifySelectors, separator}) => {
-      modifySelectors(({className}) => {
-        return `${darkSelector} .${e(`dark-even${separator}${className}`)}:nth-child(even)`;
-      });
-    });
-
-    addVariant('dark-odd', ({modifySelectors, separator}) => {
-      modifySelectors(({className}) => {
-        return `${darkSelector} .${e(`dark-odd${separator}${className}`)}:nth-child(odd)`;
+    addVariant(`{darkIdentifier}odd`, ({ modifySelectors, separator }) => {
+      modifySelectors(({ className }) => {
+        return `${darkSelector} .${e(
+          `${darkIdentifier}-odd${separator}${className}`
+        )}:nth-child(odd)`;
       });
     });
   };

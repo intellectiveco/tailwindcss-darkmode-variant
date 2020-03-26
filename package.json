@@ -1,17 +1,17 @@
 {
-  "name": "tailwindcss-dark-mode",
-  "description": "A Tailwind CSS plugin that adds variants for dark mode",
-  "version": "1.1.3",
-  "author": "Chance Arthur",
+  "name": "tailwindcss-darkmode-variant",
+  "description": "A Tailwind CSS plugin that adds variants for dark mode that is more customizable",
+  "version": "1.0.0",
+  "author": "Ritesh Dalal",
   "license": "MIT",
-  "copyright": "Chance Arthur",
+  "copyright": "Ritesh Dalal",
   "main": "index.js",
-  "homepage": "https://github.com/ChanceArthur/tailwindcss-dark-mode",
+  "homepage": "https://github.com/intellectiveco/tailwindcss-darkmode-variant",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ChanceArthur/tailwindcss-dark-mode.git"
+    "url": "https://github.com/intellectiveco/tailwindcss-darkmode-variant.git"
   },
-  "bugs": "https://github.com/ChanceArthur/tailwindcss-dark-mode/issues",
+  "bugs": "https://github.com/intellectiveco/tailwindcss-darkmode-variant/issues",
   "keywords": [
     "tailwind",
     "tailwindcss",
@@ -23,7 +23,7 @@
     "javascript"
   ],
   "dependencies": {
-    "tailwindcss": "^1.1.4"
+    "tailwindcss": "^1.2.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
